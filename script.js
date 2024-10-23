@@ -24,27 +24,21 @@ function calculate() {
 }
 
 
-
-
-// JavaScript to handle the light/dark theme toggle
-
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check if there's a saved theme preference in localStorage
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   body.classList.add(savedTheme);
   themeToggle.checked = savedTheme === 'dark-mode';
 }
 
-// Event listener for theme toggle checkbox
 themeToggle.addEventListener('change', function() {
   if (themeToggle.checked) {
     body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark-mode');  // Save the theme in localStorage
+    localStorage.setItem('theme', 'dark-mode');
   } else {
     body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light-mode');  // Save the theme in localStorage
+    localStorage.setItem('theme', 'light-mode'); 
   }
 });
